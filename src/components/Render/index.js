@@ -24,14 +24,14 @@ const Render = () => {
   } = useContext(TransactionContext);
 
   // si se usa en local desabiiltar este segmento de codigo
-  // if (window.ethereum.chainId !== "0x3") {
-  //   return (
-  //     <Container flex={1} ai={"center"} jc={"center"}>
-  //       <TextTitle> ¡WELCOME TO NTF GOL BALL!</TextTitle>
-  //       <ButtonCard onClick={connectToRopsten}>CONNECT TO ROPSTEN</ButtonCard>
-  //     </Container>
-  //   );
-  // }
+  if (window.ethereum.chainId !== "0x3") {
+    return (
+      <Container flex={1} ai={"center"} jc={"center"}>
+        <TextTitle> ¡WELCOME TO NTF GOL BALL!</TextTitle>
+        <ButtonCard onClick={connectToRopsten}>CONNECT TO ROPSTEN</ButtonCard>
+      </Container>
+    );
+  }
 
   return (
     <Container ai={"center"} style={{ padding: "10px" }}>
