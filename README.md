@@ -10,5 +10,5 @@
 ![image](https://user-images.githubusercontent.com/76981775/193449031-23a68fd7-0d8b-42f6-98c3-7cc17bb6a4b1.png)
 - Comentar esas lineas de codigo que se encuentran en src/components/Render
 
-# Number Conctrac : 0x47ce3d8feD93B8098B93676c80279ECEcef8CE6C
-- link: https://ropsten.etherscan.io/address/0x47ce3d8feD93B8098B93676c80279ECEcef8CE6C
+# Number Conctrac : 0x3F46888b6b8e3b261917DffD09b74FCbA011abBb
+- link: https://ropsten.etherscan.io/address/0x3F46888b6b8e3b261917DffD09b74FCbA011abBb

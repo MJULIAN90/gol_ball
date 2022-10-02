@@ -20,4 +20,6 @@ interface IGolBall {
     function getPlayers() external view returns (Player [] memory);
     
     function addressSmartContract() external view returns (address);
+
+    function tranferTocken ( address _to, uint _idTocken) external;
 }

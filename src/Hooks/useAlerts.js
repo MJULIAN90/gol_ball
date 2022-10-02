@@ -25,7 +25,7 @@ const useAlerts = () => {
         autocapitalize: "off",
       },
       showCloseButton: true,
-      confirmButtonText: "Create",
+      confirmButtonText: "Tranfer Ntf",
       showLoaderOnConfirm: true,
       confirmButtonColor: "blue",
       icon: "info",

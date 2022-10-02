@@ -42,4 +42,11 @@ contract GolBall is ERC721, IGolBall {
         return address(this);
     }
 
+    // Tranferir tocken
+    function tranferTocken ( address _to, uint _idTocken) public override {
+        require (msg.sender == ownerOf(_idTocken), "You do not have permissions to run this operation");
+        transferFrom(msg.sender, _to, _idTocken);
+        players[_idTocken].owner = _to;
+    } 
+
 }

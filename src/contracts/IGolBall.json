@@ -64,9 +64,27 @@
       ],
       "stateMutability": "view",
       "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_idTocken",
+          "type": "uint256"
+        }
+      ],
+      "name": "tranferTocken",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.1+commit.df193b15\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"NewPlayer\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"addressSmartContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"createNtf\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getPlayers\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"internalType\":\"struct IGolBall.Player[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/IGolBall.sol\":\"IGolBall\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/IGolBall.sol\":{\"keccak256\":\"0xbdf6974c6bb709c3c608dbafd5cc4650b67b7cc877ec228d12e72c223228fbf6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://eb56a59b877e993dfe2bd48f0c751c9db896dd6c2c3f9d23e3e5296004e1ae85\",\"dweb:/ipfs/QmTx9xA2x91oTqsXe2zdAVsEG8ui9Q9cWVsdgGutVTAbPr\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.1+commit.df193b15\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"NewPlayer\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"addressSmartContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"createNtf\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getPlayers\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"internalType\":\"struct IGolBall.Player[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_idTocken\",\"type\":\"uint256\"}],\"name\":\"tranferTocken\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/IGolBall.sol\":\"IGolBall\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/IGolBall.sol\":{\"keccak256\":\"0x9c7c1252e8cabdd08c543e7b767b66760d827427652baa52d356d206423e2f21\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://89d4eee5acf7ea64e1b82ff860326e17282fd092322286f5fffee9414f6fb5ba\",\"dweb:/ipfs/QmQQWxz8J7uppKFnTCR43iNgmfYPiSos7mUpJ1HYbzGU6V\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
@@ -74,21 +92,21 @@
   "deployedGeneratedSources": [],
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.7.0 < 0.9.0;\n\ninterface IGolBall {\n\n    //---------------------------------------Events---------------------------------------\n    // Declaración de un evento nuevo jugador\n    event NewPlayer(address indexed owner,  uint256 indexed tokenId);\n\n    //---------------------------------------Structs---------------------------------------\n       // Estructura de datos con las propiedades del jugador\n    struct Player {\n        uint256 id;\n        address owner;\n    }\n\n    //---------------------------------------Funciones---------------------------------------\n    function createNtf() external;\n\n    function getPlayers() external view returns (Player [] memory);\n    \n    function addressSmartContract() external view returns (address);\n}",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.7.0 < 0.9.0;\n\ninterface IGolBall {\n\n    //---------------------------------------Events---------------------------------------\n    // Declaración de un evento nuevo jugador\n    event NewPlayer(address indexed owner,  uint256 indexed tokenId);\n\n    //---------------------------------------Structs---------------------------------------\n       // Estructura de datos con las propiedades del jugador\n    struct Player {\n        uint256 id;\n        address owner;\n    }\n\n    //---------------------------------------Funciones---------------------------------------\n    function createNtf() external;\n\n    function getPlayers() external view returns (Player [] memory);\n    \n    function addressSmartContract() external view returns (address);\n\n    function tranferTocken ( address _to, uint _idTocken) external;\n}",
   "sourcePath": "/home/xdx/Escritorio/Mis proyectos/Solidity proyects/mio/gol_ball/contracts/IGolBall.sol",
   "ast": {
     "absolutePath": "project:/contracts/IGolBall.sol",
     "exportedSymbols": {
       "IGolBall": [
-        1808
+        1848
       ]
     },
-    "id": 1809,
+    "id": 1849,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1781,
+        "id": 1814,
         "literals": [
           "solidity",
           ">=",
@@ -107,30 +125,30 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
-        "id": 1808,
+        "id": 1848,
         "linearizedBaseContracts": [
-          1808
+          1848
         ],
         "name": "IGolBall",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "anonymous": false,
-            "id": 1787,
+            "id": 1820,
             "name": "NewPlayer",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 1786,
+              "id": 1819,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1783,
+                  "id": 1816,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "owner",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1787,
+                  "scope": 1820,
                   "src": "246:21:11",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -139,7 +157,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1782,
+                    "id": 1815,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "246:7:11",
@@ -153,12 +171,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1785,
+                  "id": 1818,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "tokenId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1787,
+                  "scope": 1820,
                   "src": "270:23:11",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -167,7 +185,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1784,
+                    "id": 1817,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "270:7:11",
@@ -185,15 +203,15 @@
           },
           {
             "canonicalName": "IGolBall.Player",
-            "id": 1792,
+            "id": 1825,
             "members": [
               {
                 "constant": false,
-                "id": 1789,
+                "id": 1822,
                 "mutability": "mutable",
                 "name": "id",
                 "nodeType": "VariableDeclaration",
-                "scope": 1792,
+                "scope": 1825,
                 "src": "479:10:11",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -202,7 +220,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 1788,
+                  "id": 1821,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "479:7:11",
@@ -215,11 +233,11 @@
               },
               {
                 "constant": false,
-                "id": 1791,
+                "id": 1824,
                 "mutability": "mutable",
                 "name": "owner",
                 "nodeType": "VariableDeclaration",
-                "scope": 1792,
+                "scope": 1825,
                 "src": "499:13:11",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -228,7 +246,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 1790,
+                  "id": 1823,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "499:7:11",
@@ -243,31 +261,31 @@
             ],
             "name": "Player",
             "nodeType": "StructDefinition",
-            "scope": 1808,
+            "scope": 1848,
             "src": "455:64:11",
             "visibility": "public"
           },
           {
             "functionSelector": "07f50a7d",
-            "id": 1795,
+            "id": 1828,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "createNtf",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1793,
+              "id": 1826,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "637:2:11"
             },
             "returnParameters": {
-              "id": 1794,
+              "id": 1827,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "648:0:11"
             },
-            "scope": 1808,
+            "scope": 1848,
             "src": "619:30:11",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -275,59 +293,59 @@
           },
           {
             "functionSelector": "8b5b9ccc",
-            "id": 1802,
+            "id": 1835,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getPlayers",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1796,
+              "id": 1829,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "674:2:11"
             },
             "returnParameters": {
-              "id": 1801,
+              "id": 1834,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1800,
+                  "id": 1833,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1802,
+                  "scope": 1835,
                   "src": "700:16:11",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_array$_t_struct$_Player_$1792_memory_ptr_$dyn_memory_ptr",
+                    "typeIdentifier": "t_array$_t_struct$_Player_$1825_memory_ptr_$dyn_memory_ptr",
                     "typeString": "struct IGolBall.Player[]"
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 1798,
+                      "id": 1831,
                       "nodeType": "UserDefinedTypeName",
                       "pathNode": {
-                        "id": 1797,
+                        "id": 1830,
                         "name": "Player",
                         "nodeType": "IdentifierPath",
-                        "referencedDeclaration": 1792,
+                        "referencedDeclaration": 1825,
                         "src": "700:6:11"
                       },
-                      "referencedDeclaration": 1792,
+                      "referencedDeclaration": 1825,
                       "src": "700:6:11",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Player_$1792_storage_ptr",
+                        "typeIdentifier": "t_struct$_Player_$1825_storage_ptr",
                         "typeString": "struct IGolBall.Player"
                       }
                     },
-                    "id": 1799,
+                    "id": 1832,
                     "nodeType": "ArrayTypeName",
                     "src": "700:9:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_struct$_Player_$1792_storage_$dyn_storage_ptr",
+                      "typeIdentifier": "t_array$_t_struct$_Player_$1825_storage_$dyn_storage_ptr",
                       "typeString": "struct IGolBall.Player[]"
                     }
                   },
@@ -336,7 +354,7 @@
               ],
               "src": "699:18:11"
             },
-            "scope": 1808,
+            "scope": 1848,
             "src": "655:63:11",
             "stateMutability": "view",
             "virtual": false,
@@ -344,29 +362,29 @@
           },
           {
             "functionSelector": "c2f5168a",
-            "id": 1807,
+            "id": 1840,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "addressSmartContract",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1803,
+              "id": 1836,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "757:2:11"
             },
             "returnParameters": {
-              "id": 1806,
+              "id": 1839,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1805,
+                  "id": 1838,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1807,
+                  "scope": 1840,
                   "src": "783:7:11",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -375,7 +393,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1804,
+                    "id": 1837,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "783:7:11",
@@ -390,18 +408,98 @@
               ],
               "src": "782:9:11"
             },
-            "scope": 1808,
+            "scope": 1848,
             "src": "728:64:11",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
+          },
+          {
+            "functionSelector": "d0e9ef76",
+            "id": 1847,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "tranferTocken",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1845,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1842,
+                  "mutability": "mutable",
+                  "name": "_to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1847,
+                  "src": "823:11:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1841,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "823:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1844,
+                  "mutability": "mutable",
+                  "name": "_idTocken",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1847,
+                  "src": "836:14:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1843,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "836:4:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "821:30:11"
+            },
+            "returnParameters": {
+              "id": 1846,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "860:0:11"
+            },
+            "scope": 1848,
+            "src": "798:63:11",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
           }
         ],
-        "scope": 1809,
-        "src": "66:728:11"
+        "scope": 1849,
+        "src": "66:797:11"
       }
     ],
-    "src": "32:762:11"
+    "src": "32:831:11"
   },
   "compiler": {
     "name": "solc",
@@ -409,7 +507,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.7",
-  "updatedAt": "2022-10-02T08:38:48.645Z",
+  "updatedAt": "2022-10-02T11:33:07.360Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

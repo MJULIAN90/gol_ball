@@ -74,11 +74,9 @@ export const TransactionProvider = ({ children }) => {
   //Tranfer NTfs
   const getTranferNtf = async (_to, _idNtf) => {
     try {
-      let transaction = await contract.transferFrom(
-        currentWalletAccount,
-        _to,
-        _idNtf
-      );
+      let transaction = await contract.tranferTocken(_to, _idNtf);
+      messageAlert("This transaction may take a few moments");
+
       const response = await transaction.wait();
 
       if (response.confirmations === 1) {
@@ -98,6 +96,7 @@ export const TransactionProvider = ({ children }) => {
   const getCreateNTF = async () => {
     try {
       let createNtf = await contract.createNtf();
+      messageAlert("This transaction may take a few moments");
       const response = await createNtf.wait();
 
       if (response.confirmations === 1) {
