@@ -6,8 +6,8 @@ import useAlerts from "../Hooks/useAlerts";
 
 export const TransactionContext = React.createContext();
 
-const contractNumber = contractNumberLocal;
-// const contractNumber = contractNumberRospten;
+// const contractNumber = contractNumberLocal;
+const contractNumber = contractNumberRospten;
 
 export const TransactionProvider = ({ children }) => {
   const { ethereum } = window;
