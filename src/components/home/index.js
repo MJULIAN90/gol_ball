@@ -2,7 +2,7 @@ import React from "react";
 import { Screen, Container, TextTitle } from "../../styles/globalStyles.js";
 
 import { images } from "../../assets";
-import Render from "../Container/index.js";
+import Render from "../Render";
 
 const Home = () => {
   return (
