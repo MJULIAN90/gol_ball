@@ -1,6 +1,5 @@
 import Swal from "sweetalert2";
 
-
 const useAlerts = () => {
   const messageAlert = (text) =>
     Swal.fire({
