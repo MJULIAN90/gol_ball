@@ -1,7 +1,7 @@
 import Swal from "sweetalert2";
 
 const useAlerts = () => {
-  const messageAlert = (text) =>
+  const tigo = (text) =>
     Swal.fire({
       title: "Congratulations",
       text: `${text}.`,
@@ -9,13 +9,13 @@ const useAlerts = () => {
       confirmButtonColor: "blue",
     });
 
-  const messageAlertError = (text) =>
-    Swal.fire({
-      title: "Error",
-      text: `${text}.`,
-      icon: "error",
-      confirmButtonColor: "blue",
-    });
+  // const messageAlertError = (text) =>
+  //   Swal.fire({
+  //     title: "Error",
+  //     text: `${text}.`,
+  //     icon: "error",
+  //     confirmButtonColor: "blue",
+  //   });
 
   const alertSendNtf = (method, id) => {
     Swal.fire({
@@ -45,7 +45,7 @@ const useAlerts = () => {
 
   return {
     alertSendNtf,
-    messageAlert,
+    tigo,
     messageAlertError,
   };
 };
