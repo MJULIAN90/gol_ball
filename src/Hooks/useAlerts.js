@@ -9,42 +9,25 @@ const useAlerts = () => {
       confirmButtonColor: "blue",
     });
 
-  // const messageAlertError = (text) =>
-  //   Swal.fire({
-  //     title: "Error",
-  //     text: `${text}.`,
-  //     icon: "error",
-  //     confirmButtonColor: "blue",
-  //   });
+  const useAlerts2 = () => {
+    const tigo = (text) =>
+      Swal.fire({
+        title: "Congratulations",
+        text: `${text}.`,
+        icon: "success",
+        confirmButtonColor: "blue",
+      });
 
-  const alertSendNtf = (method, id) => {
-    Swal.fire({
-      title: "Number to tranfer",
-      input: "text",
-      inputAttributes: {
-        autocapitalize: "off",
-      },
-      showCloseButton: true,
-      confirmButtonText: "Tranfer Ntf",
-      showLoaderOnConfirm: true,
-      confirmButtonColor: "blue",
-      icon: "info",
-      inputValidator: async (wallet) => {
-        if (wallet) {
-          await method(wallet, id);
-        } else {
-          Swal.fire({
-            title: `Error in name NTF`,
-            showCancelButton: false,
-            icon: "error",
-          });
-        }
-      },
-    });
-  };
+    const useAlerts3 = () => {
+      const tigo = (text) =>
+        Swal.fire({
+          title: "Congratulations",
+          text: `${text}.`,
+          icon: "success",
+          confirmButtonColor: "blue",
+        });
 
   return {
-    alertSendNtf,
     tigo,
     messageAlertError,
   };
